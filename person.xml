@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+            
+            <record model="ir.ui.view" id="person_tree_view">
+                <field name="name">ascs.person.tree</field>
+                <field name="model">ascs.person</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="person tree">
+                        <field name="name"/>
+                        <field name="id_proof"/>
+                        <field name="id_no"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="person_form_view">
+                <field name="name">ascs.person.form</field>
+                <field name="model">ascs.person</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="person_string">
+                    <group>
+                        <field name="name" select="1"/>
+                        <field colspan="2" name="id_proof"/>
+                        <field colspan="2" name="id_no"/>
+                                           </group>   
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_person_tree_view">
+                <field name="name">ascs.person</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">ascs.person</field>
+		   <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="person_tree_view"/>
+            </record>
+
+			    
+    </data>
+</openerp>

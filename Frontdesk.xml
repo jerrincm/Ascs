@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+            
+            <record model="ir.ui.view" id="font_tree_view">
+                <field name="name">ascs.frontdesk.tree</field>
+                <field name="model">ascs.frontdesk</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="tree">
+                        <field name="nam_id"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="font_form_view">
+                <field name="name">ascs.frontdesk.form</field>
+                <field name="model">ascs.frontdesk</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="form" version="7.0">                                 
+                       <sheet>
+                          <group>
+                              <group>                          
+                                   <field name="name" select="1"/>  
+                                   <field colspan="2" name="in"/>
+                                   <field colspan="2" name="nam_id"/>
+                                   <field colspan="2" name="Prod_id"/>
+                        		   <field colspan="2" name="rtyp"/>
+                        		   <field colspan="2" name="Number_id"/> 
+                        		   <field colspan="2" name="out"/>                          
+                             </group>                     		                         		
+                             <group>                            
+                                   <field name="cat"/>                   		                        		
+                             </group>
+                           </group>  
+                           <notebook>                           
+                           		<page string="Person Details">
+                         				<field name="ascs_persons"/>                     
+                     			</page>                
+                            </notebook>
+                          </sheet>                                                                                                                                                                  
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_font_tree_view">
+                <field name="name">ascs.frontdesk</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">ascs.frontdesk</field>
+		   <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="font_tree_view"/>
+            </record>
+
+	    
+    </data>
+</openerp>
+

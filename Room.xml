@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+            
+            <record model="ir.ui.view" id="room_tree_view">
+                <field name="name">ascs.room.tree</field>
+                <field name="model">ascs.room</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Room Details">
+                        <field name="Block_id"/>
+                        <field name="Number_id"/>
+                        <field name="rtyp"/>		 
+                   				
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="room_form_view">
+                <field name="name">ascs.room.form</field>
+                <field name="model">ascs.room</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="room">
+                       <field colspan="3" name="Block_id" select="1"/>
+                                            <group colspan="2" col="2">
+                              <separator string="Room Facilities " colspan="2"/>
+                              		<field colspan="2" name="Number_id" /> 
+                              		<field colspan="2" name="rtyp" />                   				 	
+                   				 	<field colspan="2" name="name" />
+                   				 	<field colspan="2" name="pno" />
+                   				 	<field colspan="2" name="add" />
+                   				 	                  				 	                  				 
+                   				 	
+                         	 </group>  
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_room_tree_view">
+                <field name="name">ascs.room</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">ascs.room</field>
+		   <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="room_tree_view"/>
+            </record>
+
+			   
+    </data>
+</openerp>
